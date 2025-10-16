@@ -7,11 +7,11 @@ trigger:
 - main
 
 pool:
-name: Default
+    name: Default
 
 variables:
-buildConfiguration: 'Release'
+    buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build — configuration S(buildConfiguration)
-displayName: 'dotnet build $(buildConfiguration)'
+- script: dotnet build --configuration S(buildConfiguration)
+    displayName:'dotnet build $(buildConfiguration)'
