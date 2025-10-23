@@ -8,6 +8,6 @@
 		<Folder Include="wwwroot\images\avatars\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="Tailspin.SpaceGame.Web.Models" Version="1.0.0" />
+	  <PackageReference Include="Tailspin.SpaceGame.Web.Models" Version="1.0.0-CI-20251023-032842" />
 	</ItemGroup>
 </Project>
