@@ -2,7 +2,7 @@ trigger:
 - '*'
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'windows-2022'
   demands:
   - npm
 
@@ -41,11 +41,13 @@ steps:
   displayName: 'Write build info'
   workingDirectory: $(wwwrootDir)
 
-- task: DotNetCoreCLI@2
-  displayName: 'Restore .NET dependencies'
+- task: NuGetCommand@2
+  displayName: 'Restore project dependencies'
   inputs:
     command: 'restore'
-    projects: '**/*.csproj'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+    vstsFeed: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
